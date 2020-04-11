@@ -29,15 +29,22 @@ def fibonacciModulo(n, m):
     return (current % m) 
 
 def prepare_fib_list(n, mod_value):
+    print("Dizi olusturuluyor")
     results = []
+    element_size = 10
     for i in range(n):
+        print("girdi")
         results.append(fibonacciModulo(i, mod_value))
+        if i == element_size:
+            print(i, "/", n)
+            element_size *= 10
     return results
 
 x = 100
 n = pow(10, 15)
-mod_value = 13 * 11 * 7 * 5 * 3 * 2 * 1  # 15 faktoriyeldeki carpanlar
+mod_value = 15 * 14 * 13 * 12 * 11 * 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1
 result = 0
+
 array = prepare_fib_list(n, mod_value)
 print("Dizi olusturuldu")
 
