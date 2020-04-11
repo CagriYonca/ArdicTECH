@@ -36,7 +36,7 @@ def prepare_fib_list(n, mod_value):
 
 x = 100
 n = pow(10, 15)
-mod_value = 13 * 11 * 7 * 5 * 3 * 2 * 1  # 15 faktoriyeldeki carpanlar
+mod_value = 15 * 14 * 13 * 12 * 11 * 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1
 result = 0
 array = prepare_fib_list(n, mod_value)
 print("Dizi olusturuldu")
