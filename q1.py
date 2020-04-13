@@ -40,7 +40,7 @@ def pisanoPeriod(m):
 # In[29]:
 
 """
-calculated pisano period for mod_value once
+# calculated pisano period for mod_value once
 pisanoPeriod = pisanoPeriod(mod_value)
 
 
