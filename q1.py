@@ -1,3 +1,19 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+
+calculated_pisano_period = 217728000		# calculated from pisanoPeriod function
+x = 100
+n = pow(10, 15)
+mod_value = 1307674368000 					# 15 factorial
+result = 0
+
+
+# In[2]:
+
+# divide and conquer function to calculate huge exponential functions
 def emod(a,b,c):
     if b == 0:
         return 1
@@ -7,50 +23,62 @@ def emod(a,b,c):
     else:
         return ((a % c) * emod(a, b - 1, c)) % c
 
+
+# In[3]:
+
+# this function calculates and returns pisano period for m value
 def pisanoPeriod(m): 
     previous, current = 0, 1
     for i in range(0, m * m): 
-        previous, current = current, (previous + current) % m 
+        previous = current
+        current = (previous + current) % m 
           
-        # A Pisano Period starts with 01 
         if (previous == 0 and current == 1): 
             return i + 1
 
-def fibonacciModulo(n, m): 
-    pisano_period = pisanoPeriod(m) 
-      
-    n = n % pisano_period 
+
+# In[29]:
+
+"""
+calculated pisano period for mod_value once
+pisanoPeriod = pisanoPeriod(mod_value)
+
+
+# In[30]:
+
+
+pisanoPeriod
+
+"""
+# In[5]:
+
+
+def fibonacciModulo(n, m):
+    result = []
+    n = n % calculated_pisano_period
       
     previous, current = 0, 1
-      
+    result.append(0)
     for i in range(n-1): 
-        previous, current = current, previous + current 
-          
-    return (current % m) 
+        previous = current
+        current += previous
+        result.append(current % m)
+    return result 
+#    return (current % m) 
 
-def prepare_fib_list(n, mod_value):
-    print("Dizi olusturuluyor")
-    results = []
-    element_size = 10
-    for i in range(n):
-        print("girdi")
-        results.append(fibonacciModulo(i, mod_value))
-        if i == element_size:
-            print(i, "/", n)
-            element_size *= 10
-    return results
 
-x = 100
-n = pow(10, 15)
-mod_value = 15 * 14 * 13 * 12 * 11 * 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1
-result = 0
+# In[38]:
 
-array = prepare_fib_list(n, mod_value)
-print("Dizi olusturuldu")
+# calculated fibonacci modulo array once
+fibModuloArray = fibonacciModulo(n, mod_value)
 
-for i in range(1, x + 1):  # x = 100
-    for j in range(n):  # n = 10^15
+
+# In[37]:
+
+
+for i in range(x):  # x = 100
+    for j in range(n + 1):  # n = 10^15
         a = emod(i, j, mod_value)
-        b = array[j]
+        b = fibModuloArray[j % calculated_pisano_period]
         result += (a * b) % mod_value
-print("Mod value is " , result)
+print("Mod value is " , result % mod_value)
