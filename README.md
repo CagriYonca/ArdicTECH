@@ -15,6 +15,7 @@ Cozumun islem maliyetinin en aza indirilebilmesi icin problem parcalara bolunmus
 
 3 - Son olarak tum degerleri toplayip 15! 'e gore modunu aldik.
 
+#
 
 Soru 2: Soruda veriseti olarak 1-100 arasi dogal sayilar kullanarak bir modelin carpma islemini yapmak uzere egitilmesi istenmistir.
 
@@ -22,8 +23,4 @@ Burada veriseti %80 training, %10 test ve %10 validation olarak ayrilmistir.
 Verilerimizin etiketleri, verilerdeki ikili degerlerin carpimidir, X: [4, 5], Y: [20] gibi.
 
 Optimizer olarak Adam, loss fonksiyonu olarak mean squared error kullanılmıstır.
-Model olarak kerasta 2 > 32 > 64 > 32 > 1 neuron'a sahip Dense agi olusturulmustur.
-
-
-
-
+Model olarak kerasta 2 > 32 > 64 > 32 > 1 neuron'a sahip Dense modeli olusturulmustur.
