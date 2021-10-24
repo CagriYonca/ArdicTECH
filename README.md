@@ -24,7 +24,7 @@ The labels of our data are the product of the binary values in the data, such as
 Adam is used as the optimizer and mean squared error is used as the loss function.
 As a model, a Dense model with 2 > 32 > 64 > 32 > 1 neuron was created in Keras.
 
-############ Turkish Version
+# Turkish Version
 
 Soru 1: Soruda n. değere kadar hesaplanan fibonacci sayilariyla olusturulan fibonacci polinomunun x'in 0..100 degerleri almasiyla elde edilecek degerin 15 faktoriyele gore modunun alinmasi istenmistir.
 
